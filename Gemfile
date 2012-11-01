@@ -1,4 +1,5 @@
-source :rubygems
+source 'http://ruby.taobao.org'
+# source :rubygems
 
 # Server requirements
 # gem 'thin' # or mongrel
@@ -9,7 +10,7 @@ gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
 # Component requirements
-gem 'haml'
+# gem 'haml'
 gem 'activerecord', :require => "active_record"
 gem 'sqlite3'
 

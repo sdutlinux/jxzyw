@@ -1,1 +1,7 @@
-<h1>helloworld</h1>
+<%= @section.name %>
+<p>category:</p>
+<% @categories.each do |c| %>
+  <p>
+    <%= c.name %>
+  </p>
+<% end %>

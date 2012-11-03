@@ -1,0 +1,14 @@
+<h1>
+  <%= link_to '教学资源网', '/'  %></h1>
+<% @sections.each do |s| %>
+  <p> 
+  <%= link_to s.name, url(:section, :index, s.key ) %>
+  <ul>
+  <% s.categories.each do |cate| %>
+    <li> <%=link_to cate.name, url(:category, :index, cate.id, s.key) %> </li>
+  <% end %>
+  </ul>
+  </p>
+<% end %>
+
+<%= yield %>

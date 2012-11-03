@@ -1,18 +1,14 @@
-Teaching.controllers :section do
+Teaching.controllers :category do
   before do 
     @sections = Section.all
   end
 
-  get :index, :with => :key do
-    @section = Section.find_by_key(params[:key])
-    @categories = @section.categories
-    render "#{params[:key]}/index"
+  get :index, :map => "category/:id/in/:section_key" do
+    #@section = Section.find_by_key(params[:key])
+    #@categories = @section.categories
+    #@post = 
+    #render "#{params[:key]}/index"
   end
-
-  # get :index, :map => "/foo/bar" do
-  #   session[:foo] = "bar"
-  #   render 'index'
-  # end
 
   # get :sample, :map => "/sample/url", :provides => [:any, :js] do
   #   case content_type
@@ -27,5 +23,6 @@ Teaching.controllers :section do
   # get "/example" do
   #   "Hello world!"
   # end
+
 
 end

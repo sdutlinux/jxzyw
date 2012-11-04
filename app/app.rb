@@ -1,4 +1,5 @@
 class Teaching < Padrino::Application
+  register WillPaginate::Sinatra
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
   register Padrino::Rendering
   register Padrino::Mailer

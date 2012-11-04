@@ -41,6 +41,9 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
+  require 'will_paginate'
+  require 'will_paginate/active_record'
+  include WillPaginate::Sinatra::Helpers
 end
 
 Padrino.load!

@@ -8,6 +8,7 @@ source 'http://ruby.taobao.org'
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
+gem 'will_paginate'
 
 # Component requirements
 gem 'bcrypt-ruby', :require => "bcrypt"

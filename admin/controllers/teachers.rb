@@ -5,7 +5,7 @@ Admin.controllers :teachers do
   end
 
   get :index do
-    @teachers = Teacher.all
+    @teachers = Teacher.paginate(:page => params[:page], :per_page => 10)
     render 'teachers/index'
   end
 

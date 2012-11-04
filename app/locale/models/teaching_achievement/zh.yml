@@ -1,0 +1,15 @@
+zh:
+  models:
+    teaching_achievement:
+      name: 教学成果
+      attributes:
+        id: 序号
+        name: 成果名称
+        link: 链接
+        department: 部门
+        charge_person: 完成人
+        category_id: 分类
+        level: 获奖等级
+        year: 年度
+        created_at: 创建于
+        updated_at: 更新于

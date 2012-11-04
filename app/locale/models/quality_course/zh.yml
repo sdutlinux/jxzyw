@@ -1,0 +1,15 @@
+zh:
+  models:
+    quality_course:
+      name: 优质课程
+      attributes:
+        id: 序号
+        name: 课程名称
+        link: 链接
+        department: 所属单位
+        charge_person: 课程负责人
+        course_level: 课程等级
+        category_id: 分类
+        year: 年度
+        created_at: 创建于
+        updated_at: 更新于

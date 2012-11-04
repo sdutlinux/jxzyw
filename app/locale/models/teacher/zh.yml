@@ -1,0 +1,14 @@
+zh:
+  models:
+    teacher:
+      name: 师资队伍
+      attributes:
+        id: 序号
+        name: 名称
+        link: 链接
+        college: 单位
+        category_id: 分类
+        charge_people: 负责人
+        desc: 简介
+        created_at: 创建于
+        updated_at: 更新于

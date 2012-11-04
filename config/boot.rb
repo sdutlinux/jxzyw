@@ -15,7 +15,7 @@ Bundler.require(:default, PADRINO_ENV)
 #
 # ## Configure your I18n
 #
-# I18n.default_locale = :en
+I18n.default_locale = :zh
 #
 # ## Configure your HTML5 data helpers
 #
@@ -34,6 +34,7 @@ Bundler.require(:default, PADRINO_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+  # I18n.locale = :zh
 end
 
 ##

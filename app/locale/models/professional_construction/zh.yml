@@ -1,0 +1,14 @@
+zh:
+  models:
+    professional_construction:
+      name: 专业建设
+      attributes:
+        id: 序号
+        name: 专业名称
+        link: 链接
+        college: 所属学院
+        category_id: 申报类别
+        author: 专业负责人
+        phone: 联系电话
+        created_at: 创建于
+        updated_at: 更新于

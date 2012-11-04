@@ -1,0 +1,10 @@
+zh:
+  models:
+    section:
+      name: Section
+      attributes:
+        id: 序号
+        name: Name
+        key: Key
+        created_at: 创建于
+        updated_at: 更新于

@@ -1,0 +1,14 @@
+zh:
+  models:
+    network_course:
+      name: 网络课程
+      attributes:
+        id: 序号
+        name: 课程名称
+        link: 链接
+        department: 所属单位
+        charge_person: 课程负责人
+        category_id: 分类
+        order: 批次
+        created_at: 创建于
+        updated_at: 更新于

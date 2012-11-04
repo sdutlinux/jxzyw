@@ -1,0 +1,10 @@
+zh:
+  models:
+    category:
+      name: 分类
+      attributes:
+        id: 序号
+        name: 分类名
+        section_id: 所属栏目
+        created_at: 创建于
+        updated_at: 更新于

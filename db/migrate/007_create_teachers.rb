@@ -6,7 +6,12 @@ class CreateTeachers < ActiveRecord::Migration
       t.string :college
       t.integer :category_id
       t.string :charge_people
-      t.string :desc
+      t.text :desc
+      t.text :project
+      t.text :achievement
+      t.text :paper
+      t.text :award
+
       t.timestamps
     end
   end

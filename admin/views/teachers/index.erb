@@ -10,28 +10,18 @@
     <div class="inner">
       <table class="table">
         <tr>
-          <th class="first"><%= mat(:teacher, :id) %></th>
-          <th><%= mat(:teacher, :name) %></th>
-          <th><%= mat(:teacher, :link) %></th>
+          <th class="first"><%= mat(:teacher, :name) %></th>
           <th><%= mat(:teacher, :college) %></th>
           <th><%= mat(:teacher, :category_id) %></th>
           <th><%= mat(:teacher, :charge_people) %></th>
-          <th><%= mat(:teacher, :desc) %></th>
-          <th><%= mat(:teacher, :created_at) %></th>
-          <th><%= mat(:teacher, :updated_at) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @teachers.each do |teacher| %>
         <tr>
-          <td class="first"><%= teacher.id %></td>
-          <td><%= teacher.name %></td>
-          <td><%= teacher.link %></td>
+          <td class="first"><%= teacher.name %></td>
           <td><%= teacher.college %></td>
           <td><%= teacher.category.name %></td>
           <td><%= teacher.charge_people %></td>
-          <td><%= teacher.desc %></td>
-          <td><%= teacher.created_at %></td>
-          <td><%= teacher.updated_at %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:teachers, :edit, :id => teacher.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:teachers, :destroy, :id => teacher.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>

@@ -6,9 +6,13 @@ zh:
         id: 序号
         name: 名称
         link: 链接
-        college: 单位
-        category_id: 分类
+        college: 学院
+        category_id: 类型
         charge_people: 负责人
         desc: 简介
+        achievement: 科研成果
+        paper: 论文
+        award: 获得奖项
+        project: 主要项目
         created_at: 创建于
         updated_at: 更新于

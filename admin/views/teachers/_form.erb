@@ -14,7 +14,7 @@
   <span class="description">Ex: a simple text</span>
 </div>
 <div class="group">
-  <%= f.label :category_id %><%= f.error_message_on :category_id %><br/>
+  <%= f.label :category_id %><%= f.error_message_on :category_id %>
   <%= f.select :category_id, :collection => @categories, :fields => [:name, :id], :class => :text_field %>
 </div>
 <div class="group">
@@ -24,7 +24,27 @@
 </div>
 <div class="group">
   <%= f.label :desc %><%= f.error_message_on :desc %>
-  <%= f.text_field :desc, :class => :text_field %>
+  <%= f.text_area :desc, :class => :text_area %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :project %><%= f.error_message_on :project %>
+  <%= f.text_area :project, :class => :text_area %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :achievement %><%= f.error_message_on :achievement %>
+  <%= f.text_area :achievement, :class => :text_area %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :paper %><%= f.error_message_on :paper %>
+  <%= f.text_area :paper, :class => :text_area %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :award %><%= f.error_message_on :award %>
+  <%= f.text_area :award, :class => :text_area %>
   <span class="description">Ex: a simple text</span>
 </div>
 

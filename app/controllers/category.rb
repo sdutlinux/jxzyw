@@ -4,25 +4,20 @@ Teaching.controllers :category do
   end
 
   get :index, :map => "category/:id/in/:section_key" do
-    #@section = Section.find_by_key(params[:key])
-    #@categories = @section.categories
-    #@post = 
-    #render "#{params[:key]}/index"
+    @category = Category.find(params[:id])
+    case params[:section_key]
+    when 'yzkc'
+      @quality_courses = QualityCourse.where(:category_id => @category.id)
+    when 'wlkc' 
+      @network_courses = NetworkCourse.where(:category_id => @category.id)
+    when 'jxcg'
+      @teaching_achievements = TeachingAchievement.where(:category_id => @category.id)
+    when 'zyjs'
+      @professional_constructions = ProfessionalConstruction.where(:category_id => @category.id)
+    when 'szdw'
+      @teachers = Teacher.where(:category_id => @category.id)
+    end
+    render "category/#{params[:section_key]}_items"
   end
-
-  # get :sample, :map => "/sample/url", :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get "/example" do
-  #   "Hello world!"
-  # end
-
 
 end

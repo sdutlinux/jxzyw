@@ -8,7 +8,7 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><%= link_to "Padrino Admin", url(:base_index) %></h1>
+      <h1><%= link_to t "admin", url(:base_index) %></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
           <li><%= link_to pat(:profile), url(:accounts, :edit, :id => current_account.id) %></li>
@@ -18,7 +18,9 @@
       <div id="main-navigation">
         <ul class="wat-cf">
           <% project_modules.each do |project_module| %>
-            <li class="<%= "active" if request.path_info =~ /^#{project_module.path}/ %>"><%= link_to project_module.human_name, project_module.path("/admin") %></li>
+            <li class="<%= "active" if request.path_info =~ /^#{project_module.path}/ %>">
+              <%= link_to t(project_module.name), project_module.path("/admin") %>
+            </li>
           <% end %>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 zh:
   models:
-    quality_course:
+    quality_course: 
       name: 优质课程
       attributes:
         id: 序号

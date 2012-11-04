@@ -1,4 +1,23 @@
-zh_cn:
+zh:
+  teachers: 师资队伍
+  professional_constructions: 专业建设 
+  teaching_achievements: 教学成果
+  network_courses: 网络课程
+  quality_courses: 优质课程
+  categories: 分类
+  accounts: 用户
+  admin: 管理后台
+
+  padrino:
+    admin:
+      profile: 信息
+      edit: 编辑
+      all: 所有
+      list: 列表
+      new: 新增
+      delete: 删除
+      logout: 注销
+
   date:
     formats:
       # Use the strftime parameters for formats.

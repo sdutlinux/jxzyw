@@ -5,6 +5,7 @@ class CreateProfessionalConstructions < ActiveRecord::Migration
       t.string :link
       t.string :college
       t.integer :category_id
+      t.string :author
       t.string :phone
       t.timestamps
     end

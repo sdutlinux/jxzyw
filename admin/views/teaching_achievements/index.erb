@@ -1,0 +1,50 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to pat(:list), url(:teaching_achievements, :index) %></li>
+      <li><%= link_to pat(:new), url(:teaching_achievements, :new) %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= pat(:all) %> <% mt(:teaching_achievements) %></h2>
+    <div class="inner">
+      <table class="table">
+        <tr>
+          <th class="first"><%= mat(:teaching_achievement, :id) %></th>
+          <th><%= mat(:teaching_achievement, :name) %></th>
+          <th><%= mat(:teaching_achievement, :link) %></th>
+          <th><%= mat(:teaching_achievement, :department) %></th>
+          <th><%= mat(:teaching_achievement, :charge_person) %></th>
+          <th><%= mat(:teaching_achievement, :category_id) %></th>
+          <th><%= mat(:teaching_achievement, :level) %></th>
+          <th><%= mat(:teaching_achievement, :year) %></th>
+          <th><%= mat(:teaching_achievement, :created_at) %></th>
+          <th><%= mat(:teaching_achievement, :updated_at) %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @teaching_achievements.each do |teaching_achievement| %>
+        <tr>
+          <td class="first"><%= teaching_achievement.id %></td>
+          <td><%= teaching_achievement.name %></td>
+          <td><%= teaching_achievement.link %></td>
+          <td><%= teaching_achievement.department %></td>
+          <td><%= teaching_achievement.charge_person %></td>
+          <td><%= teaching_achievement.category_id %></td>
+          <td><%= teaching_achievement.level %></td>
+          <td><%= teaching_achievement.year %></td>
+          <td><%= teaching_achievement.created_at %></td>
+          <td><%= teaching_achievement.updated_at %></td>
+          <td class="last">
+            <%= button_to pat(:edit), url(:teaching_achievements, :edit, :id => teaching_achievement.id), :method => :get, :class => :button_to %> |
+            <%= button_to pat(:delete), url(:teaching_achievements, :destroy, :id => teaching_achievement.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for :sidebar, partial("base/sidebar") %>

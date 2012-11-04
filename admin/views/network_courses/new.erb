@@ -1,0 +1,17 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to pat(:list), url(:network_courses, :index) %></li>
+      <li class="active"><%= link_to pat(:new), url(:network_courses, :new) %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= pat(:new) %> <% mt(:network_course) %></h2>
+    <div class="inner">
+      <% form_for :network_course, url(:network_courses, :create), :class => :form do |f| %>
+        <%= partial "network_courses/form", :locals => { :f => f } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% content_for :sidebar, partial("base/sidebar") %>

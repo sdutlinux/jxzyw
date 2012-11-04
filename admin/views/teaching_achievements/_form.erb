@@ -1,0 +1,40 @@
+<div class="group">
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :link %><%= f.error_message_on :link %>
+  <%= f.text_field :link, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :department %><%= f.error_message_on :department %>
+  <%= f.text_field :department, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :charge_person %><%= f.error_message_on :charge_person %>
+  <%= f.text_field :charge_person, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :category_id %><%= f.error_message_on :category_id %>
+  <%= f.text_field :category_id, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :level %><%= f.error_message_on :level %>
+  <%= f.text_field :level, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :year %><%= f.error_message_on :year %>
+  <%= f.text_field :year, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:teaching_achievements, :index)}';return false", :class => :button %>
+</div>

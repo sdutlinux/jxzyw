@@ -1,0 +1,35 @@
+<div class="group">
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :link %><%= f.error_message_on :link %>
+  <%= f.text_field :link, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :college %><%= f.error_message_on :college %>
+  <%= f.text_field :college, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :category_id %><%= f.error_message_on :category_id %>
+  <%= f.text_field :category_id, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :charge_people %><%= f.error_message_on :charge_people %>
+  <%= f.text_field :charge_people, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+<div class="group">
+  <%= f.label :desc %><%= f.error_message_on :desc %>
+  <%= f.text_field :desc, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
+
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:teachers, :index)}';return false", :class => :button %>
+</div>

@@ -1,4 +1,8 @@
 Admin.controllers :teachers do
+  before :new, :edit do
+    @section = Section.find_by_key('szdw')
+    @categories = @section.categories
+  end
 
   get :index do
     @teachers = Teacher.all

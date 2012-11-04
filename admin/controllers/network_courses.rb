@@ -1,4 +1,8 @@
 Admin.controllers :network_courses do
+  before :new, :edit do
+    @section = Section.find_by_key('wlkc')
+    @categories = @section.categories
+  end
 
   get :index do
     @network_courses = NetworkCourse.all

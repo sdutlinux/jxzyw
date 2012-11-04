@@ -1,4 +1,8 @@
 Admin.controllers :professional_constructions do
+  before :new, :edit do
+    @section = Section.find_by_key('zyjs')
+    @categories = @section.categories
+  end
 
   get :index do
     @professional_constructions = ProfessionalConstruction.all

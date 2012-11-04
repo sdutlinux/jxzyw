@@ -14,9 +14,8 @@
   <span class="description">Ex: a simple text</span>
 </div>
 <div class="group">
-  <%= f.label :category_id %><%= f.error_message_on :category_id %>
-  <%= f.text_field :category_id, :class => :text_field %>
-  <span class="description">Ex: a simple text</span>
+  <%= f.label :category_id %><%= f.error_message_on :category_id %><br/>
+  <%= f.select :category_id, :collection => @categories, :fields => [:name, :id], :class => :text_field %>
 </div>
 <div class="group">
   <%= f.label :charge_people %><%= f.error_message_on :charge_people %>

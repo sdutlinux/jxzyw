@@ -1,4 +1,8 @@
 Admin.controllers :quality_courses do
+  before :new, :edit do
+    @section = Section.find_by_key('yzkc')
+    @categories = @section.categories
+  end
 
   get :index do
     @quality_courses = QualityCourse.all

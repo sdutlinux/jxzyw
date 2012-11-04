@@ -4,9 +4,9 @@
   <span class="description">Ex: a simple text</span>
 </div>
 <div class="group">
-  <%= f.label :section_id %><%= f.error_message_on :section_id %>
-  <%= f.text_field :section_id, :class => :text_field %>
-  <span class="description">Ex: a simple text</span>
+  <%= f.label :section_id %>
+  <%= f.error_message_on :section_id %>
+  <%= f.select :section_id, :collection => @sections, :fields => [:name, :id], :class => :text_field %>
 </div>
 
 <div class="group navform wat-cf">

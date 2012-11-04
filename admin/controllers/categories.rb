@@ -1,4 +1,7 @@
 Admin.controllers :categories do
+  before :new, :edit  do
+    @sections = Section.all
+  end
 
   get :index do
     @categories = Category.all
@@ -14,7 +17,7 @@ Admin.controllers :categories do
     @category = Category.new(params[:category])
     if @category.save
       flash[:notice] = 'Category was successfully created.'
-      redirect url(:categories, :edit, :id => @category.id)
+      redirect url(:categories, :index)
     else
       render 'categories/new'
     end

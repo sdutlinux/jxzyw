@@ -1,4 +1,8 @@
 Admin.controllers :teaching_achievements do
+  before :new, :edit do
+    @section = Section.find_by_key('jxcg')
+    @categories = @section.categories
+  end
 
   get :index do
     @teaching_achievements = TeachingAchievement.all

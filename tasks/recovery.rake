@@ -7,6 +7,38 @@ namespace :recovery do
     # oo = Excel.new("#{Padrino.root}/doc/")
   end
 
+  desc  "wangluokecheng"
+  task :wlkc do
+    puts "import wlkc"
+    oo = Excel.new("#{Padrino.root}/doc/wangluokecheng.xls")
+    oo.default_sheet = oo.sheets.first
+    category_1 = Category.find_by_name('第一批').id 
+    category_2 = Category.find_by_name('第二批').id 
+    category_3 = Category.find_by_name('第三批').id 
+    category_4 = Category.find_by_name('第四批').id 
+
+    2.upto(oo.last_row) do |line|
+      puts "import #{oo.cell(line,'B')}"
+      n = NetworkCourse.new 
+      n.name = oo.cell(line,'B')
+      n.link = oo.cell(line,'F')
+      n.department = oo.cell(line,'D')
+      n.charge_person = oo.cell(line,'C')
+      n.subject = oo.cell(line, 'E')
+      id = oo.cell(line, 'G').to_i
+      if id == 56
+        n.category_id = category_4 
+      elsif id ==  45 
+        n.category_id = category_1
+      elsif id == 55 
+        n.category_id = category_3 
+      else id == 46
+        n.category_id = category_2
+      end
+      n.save!
+    end
+  end
+
   desc "jiaoxuechengguo"
   task :jxcg do
     puts "import jxcg"

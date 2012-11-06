@@ -10,8 +10,7 @@
     <div class="inner">
       <table class="table">
         <tr>
-          <th class="first"><%= mat(:category, :id) %></th>
-          <th><%= mat(:category, :name) %></th>
+          <th class="first"><%= mat(:category, :name) %></th>
           <th><%= mat(:category, :section_id) %></th>
           <th><%= mat(:category, :created_at) %></th>
           <th><%= mat(:category, :updated_at) %></th>
@@ -19,8 +18,7 @@
         </tr>
         <% @categories.each do |category| %>
         <tr>
-          <td class="first"><%= category.id %></td>
-          <td><%= category.name %></td>
+          <td class="first"><%= category.name %></td>
           <td><%= category.section.name %></td>
           <td><%= category.created_at.strftime("%y/%m/%d") %></td>
           <td><%= category.updated_at.strftime("%y/%m/%d") %></td>

@@ -10,28 +10,20 @@
     <div class="inner">
       <table class="table">
         <tr>
-          <th class="first"><%= mat(:network_course, :id) %></th>
-          <th><%= mat(:network_course, :name) %></th>
-          <th><%= mat(:network_course, :link) %></th>
+          <th class="first"><%= mat(:network_course, :name) %></th>
           <th><%= mat(:network_course, :department) %></th>
           <th><%= mat(:network_course, :charge_person) %></th>
-          <th><%= mat(:network_course, :category_id) %></th>
           <th><%= mat(:network_course, :order) %></th>
           <th><%= mat(:network_course, :created_at) %></th>
-          <th><%= mat(:network_course, :updated_at) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @network_courses.each do |network_course| %>
         <tr>
-          <td class="first"><%= network_course.id %></td>
-          <td><%= network_course.name %></td>
-          <td><%= network_course.link %></td>
+          <td class="first"><%=link_to network_course.name, network_course.link %></td>
           <td><%= network_course.department %></td>
           <td><%= network_course.charge_person %></td>
-          <td><%= network_course.category_id %></td>
-          <td><%= network_course.order %></td>
+          <td><%= network_course.category.name %></td>
           <td><%= network_course.created_at %></td>
-          <td><%= network_course.updated_at %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:network_courses, :edit, :id => network_course.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:network_courses, :destroy, :id => network_course.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>

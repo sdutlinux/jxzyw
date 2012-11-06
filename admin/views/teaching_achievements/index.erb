@@ -10,30 +10,22 @@
     <div class="inner">
       <table class="table">
         <tr>
-          <th class="first"><%= mat(:teaching_achievement, :id) %></th>
-          <th><%= mat(:teaching_achievement, :name) %></th>
-          <th><%= mat(:teaching_achievement, :link) %></th>
+          <th class="first"><%= mat(:teaching_achievement, :name) %></th>
           <th><%= mat(:teaching_achievement, :department) %></th>
           <th><%= mat(:teaching_achievement, :charge_person) %></th>
           <th><%= mat(:teaching_achievement, :category_id) %></th>
           <th><%= mat(:teaching_achievement, :level) %></th>
           <th><%= mat(:teaching_achievement, :year) %></th>
-          <th><%= mat(:teaching_achievement, :created_at) %></th>
-          <th><%= mat(:teaching_achievement, :updated_at) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @teaching_achievements.each do |teaching_achievement| %>
         <tr>
-          <td class="first"><%= teaching_achievement.id %></td>
-          <td><%= teaching_achievement.name %></td>
-          <td><%= teaching_achievement.link %></td>
+          <td class="first"><%=link_to teaching_achievement.name, teaching_achievement.link %></td>
           <td><%= teaching_achievement.department %></td>
           <td><%= teaching_achievement.charge_person %></td>
-          <td><%= teaching_achievement.category_id %></td>
+          <td><%= teaching_achievement.category.name %></td>
           <td><%= teaching_achievement.level %></td>
           <td><%= teaching_achievement.year %></td>
-          <td><%= teaching_achievement.created_at %></td>
-          <td><%= teaching_achievement.updated_at %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:teaching_achievements, :edit, :id => teaching_achievement.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:teaching_achievements, :destroy, :id => teaching_achievement.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>

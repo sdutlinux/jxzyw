@@ -13,7 +13,7 @@ set :scm, :git
 set :branch, "master"
 set :use_sudo, false
 set :keep_releases, 3
-set :bundle_without, [:development,:test]
+#set :bundle_without, [:development,:test]
 
 set :deploy_to, "/home/rails/#{application}"
 

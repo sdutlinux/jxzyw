@@ -17,10 +17,32 @@ zh:
       new: 新增
       delete: 删除
       logout: 注销
+      save: 保存
+      cancel: 取消
 
   activerecord:
     errors:
       models:
+        teaching_achievement:
+          attributes:
+            name:
+              blank: 不能为空
+        professional_construction:
+          attributes:
+            name:
+              blank: 不能为空
+        teacher:
+          attributes:
+            name:
+              blank: 不能为空
+        quality_course:
+          attributes:
+            name:
+              blank: 不能为空
+        network_course:
+          attributes:
+            name:
+              blank: 不能为空
         category:
           attributes:
             name:

@@ -1,5 +1,5 @@
 Admin.controllers :quality_courses do
-  before :new, :edit do
+  before :new, :edit, :create do
     @section = Section.find_by_key('yzkc')
     @categories = @section.categories
   end

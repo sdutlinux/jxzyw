@@ -1,5 +1,5 @@
 Admin.controllers :network_courses do
-  before :new, :edit do
+  before :new, :edit, :create  do
     @section = Section.find_by_key('wlkc')
     @categories = @section.categories
   end

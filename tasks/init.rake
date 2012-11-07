@@ -27,7 +27,7 @@ namespace :init do
       {:name =>'双语示范课程', :section_id => @yzkc_section.id},
       {:name =>'重点基础课程', :section_id => @yzkc_section.id},
       {:name =>'专业核心课程', :section_id => @yzkc_section.id},
-      {:name =>'培育精品课程 ', :section_id => @yzkc_section.id},
+      {:name =>'培育精品课程', :section_id => @yzkc_section.id},
 
       {:name => '第一批', :section_id => @wlkc_section.id},
       {:name => '第二批', :section_id => @wlkc_section.id},

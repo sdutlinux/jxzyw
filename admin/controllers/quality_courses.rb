@@ -1,11 +1,11 @@
 Admin.controllers :quality_courses do
-  before :new, :edit do
+  before :new, :edit, :create do
     @section = Section.find_by_key('yzkc')
     @categories = @section.categories
   end
 
   get :index do
-    @quality_courses = QualityCourse.all
+    @quality_courses = QualityCourse.paginate(:page => params[:page], :per_page => 10)
     render 'quality_courses/index'
   end
 

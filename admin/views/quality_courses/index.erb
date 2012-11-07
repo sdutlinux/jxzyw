@@ -10,30 +10,20 @@
     <div class="inner">
       <table class="table">
         <tr>
-          <th class="first"><%= mat(:quality_course, :id) %></th>
-          <th><%= mat(:quality_course, :name) %></th>
-          <th><%= mat(:quality_course, :link) %></th>
+          <th class="first"><%= mat(:quality_course, :name) %></th>
           <th><%= mat(:quality_course, :department) %></th>
           <th><%= mat(:quality_course, :charge_person) %></th>
-          <th><%= mat(:quality_course, :course_level) %></th>
           <th><%= mat(:quality_course, :category_id) %></th>
           <th><%= mat(:quality_course, :year) %></th>
-          <th><%= mat(:quality_course, :created_at) %></th>
-          <th><%= mat(:quality_course, :updated_at) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @quality_courses.each do |quality_course| %>
         <tr>
-          <td class="first"><%= quality_course.id %></td>
-          <td><%= quality_course.name %></td>
-          <td><%= quality_course.link %></td>
+          <td class="first"><%=link_to quality_course.name, quality_course.link %></td>
           <td><%= quality_course.department %></td>
           <td><%= quality_course.charge_person %></td>
-          <td><%= quality_course.course_level %></td>
-          <td><%= quality_course.category_id %></td>
+          <td><%= quality_course.category.name %></td>
           <td><%= quality_course.year %></td>
-          <td><%= quality_course.created_at %></td>
-          <td><%= quality_course.updated_at %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:quality_courses, :edit, :id => quality_course.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:quality_courses, :destroy, :id => quality_course.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
@@ -41,9 +31,7 @@
         </tr>
         <% end %>
       </table>
-      <div class="actions-bar wat-cf">
-        <div class="actions"></div>
-      </div>
+          <%= will_paginate @quality_courses%>
     </div>
   </div>
 </div>

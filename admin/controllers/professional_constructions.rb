@@ -1,11 +1,11 @@
 Admin.controllers :professional_constructions do
-  before :new, :edit do
+  before :new, :edit, :create  do
     @section = Section.find_by_key('zyjs')
     @categories = @section.categories
   end
 
   get :index do
-    @professional_constructions = ProfessionalConstruction.all
+    @professional_constructions = ProfessionalConstruction.paginate(:page => params[:page], :per_page => 10)
     render 'professional_constructions/index'
   end
 

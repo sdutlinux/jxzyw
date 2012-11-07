@@ -5,7 +5,7 @@ Admin.controllers :teaching_achievements do
   end
 
   get :index do
-    @teaching_achievements = TeachingAchievement.all
+    @teaching_achievements = TeachingAchievement.paginate(:page => params[:page], :per_page => 10)
     render 'teaching_achievements/index'
   end
 

@@ -1,10 +1,10 @@
 Admin.controllers :categories do
-  before :new, :edit  do
+  before :new, :edit,:create  do
     @sections = Section.all
   end
 
   get :index do
-    @categories = Category.all
+    @categories = Category.paginate(:page => params[:page], :per_page => 10)
     render 'categories/index'
   end
 

@@ -5,7 +5,7 @@ Admin.controllers :network_courses do
   end
 
   get :index do
-    @network_courses = NetworkCourse.all
+    @network_courses = NetworkCourse.paginate(:page => params[:page], :per_page => 10)
     render 'network_courses/index'
   end
 

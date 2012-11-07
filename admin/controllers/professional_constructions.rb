@@ -5,7 +5,7 @@ Admin.controllers :professional_constructions do
   end
 
   get :index do
-    @professional_constructions = ProfessionalConstruction.all
+    @professional_constructions = ProfessionalConstruction.paginate(:page => params[:page], :per_page => 10)
     render 'professional_constructions/index'
   end
 

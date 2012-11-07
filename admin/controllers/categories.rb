@@ -4,7 +4,7 @@ Admin.controllers :categories do
   end
 
   get :index do
-    @categories = Category.all
+    @categories = Category.paginate(:page => params[:page], :per_page => 10)
     render 'categories/index'
   end
 

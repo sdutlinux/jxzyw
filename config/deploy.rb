@@ -35,8 +35,8 @@ set :deploy_to, "/home/rails/#{application}"
 
    desc "init db"
    task :init_db, :roles => :db do
-     run "cd #{deploy_to}/current/; bundle exec rake ar:create"
-     run "cd #{deploy_to}/current/; bundle exec rake ar:migrate"
+     run "cd #{deploy_to}/current/; bundle exec rake ar:create PADRINO_ENV=production"
+     run "cd #{deploy_to}/current/; bundle exec rake ar:migrate PADRINO_ENV=production"
    end
  end
 

@@ -13,11 +13,23 @@
 #     :socket    => '/tmp/mysql.sock'
 #   }
 #
-ActiveRecord::Base.configurations[:development] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'teaching_development.db')
+#ActiveRecord::Base.configurations[:development] = {
+#  :adapter => 'sqlite3',
+#  :database => Padrino.root('db', 'teaching_development.db')
+#
+#}
 
-}
+ ActiveRecord::Base.configurations[:development] = {
+   :adapter   => 'mysql',
+   :encoding  => 'utf8',
+   :reconnect => true,
+   :database  => 'jxzyw',
+   :pool      => 5,
+   :username  => 'root',
+   :password  => 'admin',
+   :host      => 'localhost'
+   #:socket    => '/tmp/mysql.sock'
+ }
 
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'sqlite3',

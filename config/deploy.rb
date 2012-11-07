@@ -17,27 +17,32 @@ set :keep_releases, 3
 
 set :deploy_to, "/home/rails/#{application}"
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
 
-# If you are using Passenger mod_rails uncomment this:
- namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
+  desc "Symlinks the database.rb"
+  task :symlink_db, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/database.rb #{release_path}/config/database.rb"
+  end
 
-   desc "Symlinks the database.rb"
-   task :symlink_db, :roles => :app do
-     run "ln -nfs #{deploy_to}/shared/config/database.rb #{release_path}/config/database.rb"
-   end
+  desc "init db"
+  task :init_db, :roles => :db do
+    run "cd #{deploy_to}/current/; bundle exec rake ar:create PADRINO_ENV=production"
+    run "cd #{deploy_to}/current/; bundle exec rake ar:migrate PADRINO_ENV=production"
+  end
 
-   desc "init db"
-   task :init_db, :roles => :db do
-     run "cd #{deploy_to}/current/; bundle exec rake ar:create PADRINO_ENV=production"
-     run "cd #{deploy_to}/current/; bundle exec rake ar:migrate PADRINO_ENV=production"
-   end
- end
+  desc "recovery data"
+  task :recovery_data, :roles => :db  do
+    run "cd #{deploy_to}/current/; bundle exec rake init:sections  PADRINO_ENV=production"
+    run "cd #{deploy_to}/current/; bundle exec rake init:categories PADRINO_ENV=production"
+    run "cd #{deploy_to}/current/; bundle exec rake recovery:all  PADRINO_ENV=production"
+    run "cd #{deploy_to}/current/; bundle exec rake seed  PADRINO_ENV=production"
+  end
+end
 
-after 'deploy:update_code', 'deploy:symlink_db','deploy:init_db' 
+after "deploy:restart", "deploy:cleanup"
+after 'deploy:update_code', 'deploy:symlink_db', 'deploy:recovery_data'

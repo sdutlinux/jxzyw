@@ -186,4 +186,9 @@ namespace :recovery do
       s.save!
     end
   end
+
+  desc "all"
+  task :all => [:yzkc, :wlkc, :jxcg, :zyjs, :szdw]do
+    puts "hello world"
+  end
 end

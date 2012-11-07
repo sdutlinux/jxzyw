@@ -40,9 +40,8 @@ namespace :deploy do
     run "cd #{deploy_to}/current/; bundle exec rake init:sections  PADRINO_ENV=production"
     run "cd #{deploy_to}/current/; bundle exec rake init:categories PADRINO_ENV=production"
     run "cd #{deploy_to}/current/; bundle exec rake recovery:all  PADRINO_ENV=production"
-    run "cd #{deploy_to}/current/; bundle exec rake seed  PADRINO_ENV=production"
   end
 end
 
 after "deploy:restart", "deploy:cleanup"
-after 'deploy:update_code', 'deploy:symlink_db', 'deploy:recovery_data'
+after 'deploy:update_code', 'deploy:symlink_db','deploy:init_db', 'deploy:recovery_data'

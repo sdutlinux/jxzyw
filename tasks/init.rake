@@ -1,5 +1,11 @@
 #coding: utf-8
 namespace :init do
+
+  desc "account"
+  task :accout do
+    Account.create(:email => 'ldshuang@gmail.com', :name => "lidashuang", :surname => "dashuang", :password => '123.com', :password_confirmation => password, :role => "admin")
+  end
+
   desc "create section"
   task :sections => :environment do
     sections = [

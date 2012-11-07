@@ -40,7 +40,7 @@ namespace :recovery do
       else
         next 
       end
-      q.year = oo.cell(line, 'D')
+      q.year = oo.cell(line, 'D').to_i
       q.save!
     end
   end

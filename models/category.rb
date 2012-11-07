@@ -7,4 +7,6 @@ class Category < ActiveRecord::Base
   has_many :quality_courses
   has_many :teaching_achievements
 
+  validates_presence_of :name 
+
 end

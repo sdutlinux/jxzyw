@@ -1,5 +1,5 @@
 Admin.controllers :categories do
-  before :new, :edit  do
+  before :new, :edit,:create  do
     @sections = Section.all
   end
 

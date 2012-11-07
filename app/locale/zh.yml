@@ -18,6 +18,14 @@ zh:
       delete: 删除
       logout: 注销
 
+  activerecord:
+    errors:
+      models:
+        category:
+          attributes:
+            name:
+              blank: 不能为空
+
   date:
     formats:
       # Use the strftime parameters for formats.

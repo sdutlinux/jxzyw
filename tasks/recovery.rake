@@ -1,10 +1,48 @@
 #coding: utf-8
 require 'roo'
 namespace :recovery do
-  desc "yzkc"
+  desc "youzhikecheng"
   task :yzkc do
     puts "import yzkc"
-    # oo = Excel.new("#{Padrino.root}/doc/")
+    oo = Excel.new("#{Padrino.root}/doc/youzhikecheng.xls")
+    oo.default_sheet = oo.sheets.first
+
+    category_1 = Category.find_by_name('国家级精品课程').id 
+    category_2 = Category.find_by_name('省级精品课程').id 
+    category_3 = Category.find_by_name('校级精品课程').id 
+    category_4 = Category.find_by_name('双语示范课程').id 
+    category_5 = Category.find_by_name('重点基础课程').id 
+    category_6 = Category.find_by_name('专业核心课程').id 
+    category_7 = Category.find_by_name('培育精品课程').id 
+
+    2.upto(oo.last_row) do |line|
+      puts "import #{oo.cell(line,'B')}"
+      q = QualityCourse.new 
+      q.name = oo.cell(line, 'C')
+      q.link = oo.cell(line, 'F')
+      q.department = oo.cell(line, 'E')
+      q.charge_person = oo.cell(line, 'B')
+      case oo.cell(line,'G').to_i
+      when 49
+       q.category_id =  category_1
+      when 52
+       q.category_id =  category_2
+      when 53
+       q.category_id =  category_3
+      when 59
+       q.category_id =  category_4
+      when 57
+       q.category_id =  category_5
+      when 54
+       q.category_id =  category_6
+      when 58
+       q.category_id =  category_7
+      else
+        next 
+      end
+      q.year = oo.cell(line, 'D')
+      q.save!
+    end
   end
 
   desc  "wangluokecheng"

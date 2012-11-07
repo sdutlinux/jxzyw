@@ -188,7 +188,7 @@ namespace :recovery do
   end
 
   desc "all"
-  task :all => [:yzkc, :wlkc, :jxcg, :zyjs, :szdw]do
+  task :all => [:yzkc, :wlkc, :jxcg, :zyjs, :szdw] do
     puts "hello world"
   end
 end

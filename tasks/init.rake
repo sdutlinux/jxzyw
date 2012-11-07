@@ -2,7 +2,7 @@
 namespace :init do
 
   desc "account"
-  task :accout do
+  task :accout => :environment  do
     Account.create(:email => 'ldshuang@gmail.com', :name => "lidashuang", :surname => "dashuang", :password => '123.com', :password_confirmation => password, :role => "admin")
   end
 

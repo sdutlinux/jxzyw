@@ -3,7 +3,7 @@ namespace :init do
 
   desc "account"
   task :accout => :environment  do
-    Account.create(:email => 'ldshuang@gmail.com', :name => "lidashuang", :surname => "dashuang", :password => '123.com', :password_confirmation => password, :role => "admin")
+    Account.create(:email => 'ldshuang@gmail.com', :name => "lidashuang", :surname => "dashuang", :password => '123.com', :password_confirmation => '123.com', :role => "admin")
   end
 
   desc "create section"

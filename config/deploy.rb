@@ -25,10 +25,10 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
-  desc "Symlinks the database.rb"
-  task :symlink_db, :roles => :app do
-    run "ln -nfs #{deploy_to}/shared/config/database.rb #{release_path}/config/database.rb"
-  end
+#  desc "Symlinks the database.rb"
+#  task :symlink_db, :roles => :app do
+#    run "ln -nfs #{deploy_to}/shared/config/database.rb #{release_path}/config/database.rb"
+#  end
 
   desc "init db"
   task :init_db, :roles => :db do

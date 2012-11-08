@@ -41,4 +41,14 @@ class Admin < Padrino::Application
     role.project_module :categories, '/categories'
     role.project_module :accounts, '/accounts'
   end
+
+  access_control.roles_for :author do |role|
+    role.project_module :teachers, '/teachers'
+    role.project_module :professional_constructions, '/professional_constructions'
+    role.project_module :teaching_achievements, '/teaching_achievements'
+    role.project_module :network_courses, '/network_courses'
+    role.project_module :quality_courses, '/quality_courses'
+    role.project_module :categories, '/categories'
+    # role.project_module :accounts, '/accounts'
+  end
 end

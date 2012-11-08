@@ -1,6 +1,14 @@
-<h1>
-  <%= @category.name %>
-</h1>
-<p>
-  <%= @quality_courses.count  %>
-</p>
+<ul class="breadcrumb">
+  <li><a href="/">Home</a> <span class="divider">/</span></li>
+  <li><%= link_to @category.section.name, url(:section, :index, :key => @key) %> <span class="divider">/</span></li>
+  <li class="active"> <%= @category.name %> </li>
+</ul>
+
+
+<ul>
+  <% @items.each do |i|%>
+  <li> <%= i.name %></li>
+  <% end %>
+
+</ul>
+

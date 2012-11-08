@@ -17,7 +17,6 @@ set :keep_releases, 3
 
 set :deploy_to, "/home/rails/#{application}"
 
-#after "deploy:restart", "deploy:cleanup"
 #
 namespace :deploy do
   task :start do ; end
@@ -46,3 +45,4 @@ namespace :deploy do
 end
 
 #after 'bundle:install', 'deploy:init_db', 'deploy:recovery_data'
+after "deploy:restart", "deploy:cleanup"

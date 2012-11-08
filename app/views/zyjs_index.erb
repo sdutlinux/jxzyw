@@ -2,3 +2,15 @@
   <li><a href="/">Home</a> <span class="divider">/</span></li>
   <li class="active"> <%= @section.name   %> </li>
 </ul>
+
+
+<% @categories.each do |cate|  %>
+<h3>
+	<%= cate.name %> <br> 
+</h3>
+  <% cate.professional_constructions.each do |course| %>
+  <p>
+    <%= course.name  %>
+  </p>
+  <% end %>
+<% end %>

@@ -19,6 +19,7 @@ zh:
       logout: 注销
       save: 保存
       cancel: 取消
+      index: 网站首页
 
   activerecord:
     errors:

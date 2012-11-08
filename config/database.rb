@@ -19,10 +19,21 @@ ActiveRecord::Base.configurations[:development] = {
 
 }
 
+# ActiveRecord::Base.configurations[:development] = {
+#   :adapter   => 'mysql',
+#   :encoding  => 'utf8',
+#   :reconnect => true,
+#   :database  => 'jxzyw_dev',
+#   :pool      => 5,
+#   :username  => 'root',
+#   :password  => 'admin',
+#   :host      => 'localhost'
+#   #:socket    => '/tmp/mysql.sock'
+# }
+
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'teaching_production.db')
-
+  :database => '/home/rails/jxzyw/shared/teaching_production.db'
 }
 
 ActiveRecord::Base.configurations[:test] = {

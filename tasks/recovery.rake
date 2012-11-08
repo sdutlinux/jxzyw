@@ -82,9 +82,11 @@ namespace :recovery do
     puts "import jxcg"
     oo = Excel.new("#{Padrino.root}/doc/jiaoxuechengguo.xls")
     oo.default_sheet = oo.sheets.first
-    category_1 = Category.find_by_name('国家级教学成果')
-    category_2 = Category.find_by_name('省级教学成果')
-    category_3 = Category.find_by_name('校级教学成果')
+
+    category_1 = Category.find_by_name('国家级教学成果').id 
+    category_2 = Category.find_by_name('省级教学成果').id 
+    category_3 = Category.find_by_name('校级教学成果').id 
+
     2.upto(oo.last_row) do |line|
       puts "import #{oo.cell(line,'B')}"
       t = TeachingAchievement.new 
@@ -94,13 +96,15 @@ namespace :recovery do
       t.charge_person = oo.cell(line,'C')
       t.level = oo.cell(line,'E')
       t.year = oo.cell(line,'G').to_i
+
       if oo.cell(line,'H').to_i == 18
         t.category_id = category_3
       elsif oo.cell(line,'H').to_i == 15
-        t.category_id = category_1.id 
+        t.category_id = category_1
       else oo.cell(line,'H').to_i == 16
         t.category_id = category_2
       end
+
       t.save!
     end
     
@@ -185,5 +189,10 @@ namespace :recovery do
       end
       s.save!
     end
+  end
+
+  desc "all"
+  task :all => [:yzkc, :wlkc, :jxcg, :zyjs, :szdw] do
+    puts "hello world"
   end
 end

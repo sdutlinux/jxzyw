@@ -8,6 +8,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :role
       t.timestamps
     end
+    Account.create(:email => 'ldshuang@gmail.com', :name => "lidashuang", :surname => "dashuang", :password => '123.com', :password_confirmation => '123.com', :role => "admin")
   end
 
   def self.down

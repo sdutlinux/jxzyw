@@ -6,7 +6,7 @@ Teaching.controllers :section do
   get :index, :with => :key do
     @section = Section.find_by_key(params[:key])
     @categories = @section.categories
-    render "#{params[:key]}/index"
+    render "#{params[:key]}_index"
   end
 
   # get :index, :map => "/foo/bar" do

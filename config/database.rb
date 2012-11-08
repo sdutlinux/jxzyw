@@ -33,8 +33,7 @@ ActiveRecord::Base.configurations[:development] = {
 
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'sqlite3',
-  :database => '/home/rails/jxzyw/shared/teaching_production.db')
-
+  :database => '/home/rails/jxzyw/shared/teaching_production.db'
 }
 
 ActiveRecord::Base.configurations[:test] = {

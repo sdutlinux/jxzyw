@@ -14,13 +14,13 @@ gem 'will_paginate'
 gem 'bcrypt-ruby', :require => "bcrypt"
 # gem 'haml'
 gem 'activerecord', :require => "active_record"
-#gem 'sqlite3'
-gem 'mysql'
+gem 'sqlite3'
+#gem 'mysql'
 gem 'roo', :require => false 
 
 # Test requirements
-gem 'rspec'#, :group => "test"
-gem 'rack-test', :require => "rack/test"#, :group => "test"
+#gem 'rspec', :group => "test"
+#gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'

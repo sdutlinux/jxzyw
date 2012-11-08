@@ -10,7 +10,7 @@ set :port, 80
 set :application, "jxzyw"
 set :repository,  "git://github.com/jwch/teaching.git"
 set :scm, :git
-set :branch, "master"
+set :branch, "develop"
 set :use_sudo, false
 set :keep_releases, 3
 set :bundle_without, [:development,:test]

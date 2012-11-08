@@ -4,10 +4,12 @@ zh:
       name: Account
       attributes:
         id: 序号
-        name: Name
-        surname: Surname
-        email: Email
+        name: 名
+        surname: 姓
+        email: 邮箱
         crypted_password: Crypted password
-        role: Role
+        role: 权限
+        password: 密码
+        password_confirmation: 确认密码
         created_at: 创建于
         updated_at: 更新于

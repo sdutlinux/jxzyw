@@ -11,11 +11,13 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "bootstrap.min" %>
+    <%= stylesheet_link_tag "custom" %>
+    <%= stylesheet_link_tag "docs" %>
 
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
+    <div class="navbar navbar-fluid-top navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -35,19 +37,37 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+      <!-- 
+        <div class="span2">
           <div class="well sidebar-nav">
+            --> 
+            <div class="span2 bs-docs-sidebar">
+              <ul class="nav nav-list bs-docs-sidenav affix">
+              <% @sections.each do |s| %>
+                <li class=<%= 'active' if s.key == @key  %>>
+                  <%= link_to  s.name + '<i class="icon-chevron-right"></i>' , url(:section, :index, s.key ) %>
+                </li>
+              <% end %>
+              </ul>
+            </div>
+
+
+          <!-- 
             <ul class="nav nav-list">
               <% @sections.each do |s| %>
-                <li class="nav-header"> <%= link_to s.name, url(:section, :index, s.key ) %> </li>
+                <li class="nav-header">  
+                <i class="icon-list"></i>
+                <%= link_to  s.name, url(:section, :index, s.key ), :class => 'section-nav' %>
+                </li>
                   <% s.categories.each do |cate| %>
-                <li> <%=link_to cate.name, url(:category, :index, cate.id, s.key) %> </li>
+                <li style=<%= "display:none;" unless s.key == @key %>> <%=link_to cate.name, url(:category, :index, cate.id, s.key) %> </li>
                 <% end %>
               <% end %>
             </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
+          </div>
+        </div>
+        -->
+        <div class="span10">
           <%= yield %>
         </div>
       </div><!--/row-->
@@ -58,10 +78,8 @@
 
     </div> <!-- /container -->
 
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag  'jquery-1.8.2.min' %>
+    <%= javascript_include_tag  'application' %>
 
   </body>
 </html>

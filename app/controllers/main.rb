@@ -1,6 +1,8 @@
 Teaching.controllers do 
   get :index do 
-    @sections = Section.all
-    render 'index'
+    redirect url(:section, :index, Section.first.key)
+    #@sections = Section.all
+    #@section = Section.first
+    #render 'index'
   end
 end

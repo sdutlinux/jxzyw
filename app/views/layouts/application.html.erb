@@ -26,7 +26,17 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="/">山东理工大学教学资源网</a>
+          <a class="brand" href="/"></a>
+          
           <div class="container-fluid nav-collapse">
+            <ul class="nav">
+              <% @sections.each do |s| %>
+                <li class=<%= 'active' if s.key == @key  %>>
+                  <%= link_to  s.name, url(:section, :index, s.key ) %>
+                </li>
+              <% end %>
+            </ul>
+
             <ul class="nav pull-right">
               <li><%= link_to "管理登录", '/admin/sessions/new' %></li>
             </ul>
@@ -37,44 +47,25 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-      <!-- 
-        <div class="span2">
-          <div class="well sidebar-nav">
-            --> 
             <div class="span2 bs-docs-sidebar">
               <ul class="nav nav-list bs-docs-sidenav affix">
-              <% @sections.each do |s| %>
-                <li class=<%= 'active' if s.key == @key  %>>
-                  <%= link_to  s.name + '<i class="icon-chevron-right"></i>' , url(:section, :index, s.key ) %>
+              <% @section.categories.each do |c| %>
+                <li class=<%= ''  %>>
+                <%= link_to  c.name + '<i class="icon-chevron-right"></i>' , "##{c.id}" %>
                 </li>
               <% end %>
               </ul>
             </div>
-
-
-          <!-- 
-            <ul class="nav nav-list">
-              <% @sections.each do |s| %>
-                <li class="nav-header">  
-                <i class="icon-list"></i>
-                <%= link_to  s.name, url(:section, :index, s.key ), :class => 'section-nav' %>
-                </li>
-                  <% s.categories.each do |cate| %>
-                <li style=<%= "display:none;" unless s.key == @key %>> <%=link_to cate.name, url(:category, :index, cate.id, s.key) %> </li>
-                <% end %>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-        -->
         <div class="span10">
           <%= yield %>
         </div>
       </div><!--/row-->
 
+      <!--
       <footer>
         <p>&copy; Company 2012</p>
       </footer>
+      -->
 
     </div> <!-- /container -->
 

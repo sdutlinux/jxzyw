@@ -1,15 +1,27 @@
-<ul class="breadcrumb">
-  <li><a href="/">Home</a> <span class="divider">/</span></li>
-  <li class="active"> <%= @section.name   %> </li>
-</ul>
-
 <% @categories.each do |cate|  %>
-<h3>
-	<%= cate.name %> <br> 
-</h3>
-  <% cate.teachers.each do |course| %>
-  <p>
-    <%= course.name  %>
-  </p>
-  <% end %>
+  <h3 id="<%= cate.id %>">
+    <%= cate.name %> <br> 
+  </h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>团队名称</th>
+        <th>单位</th>
+        <th>类型</th>
+        <th>负责人</th>
+        <th>简介</th>
+      </tr>
+    </thead>
+    <% cate.teachers.each do |course| %>
+      <tbody>
+        <tr>
+          <td> <%= link_to course.name, course.link, :target => "_blank" %> </td>
+          <td> <%= course.college %> </td>
+          <td> <%= course.category.name%> </td>
+          <td> <%= course.charge_people %> </td>
+          <td> <%= course.desc%> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>

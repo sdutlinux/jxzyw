@@ -2,7 +2,7 @@ source 'http://ruby.taobao.org'
 # source :rubygems
 
 # Server requirements
-# gem 'thin' # or mongrel
+gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
 
 # Project requirements

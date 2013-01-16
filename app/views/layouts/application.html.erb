@@ -50,8 +50,8 @@
             <div class="span2 bs-docs-sidebar">
               <ul class="nav nav-list bs-docs-sidenav affix">
               <% @section.categories.each do |c| %>
-                <li class=<%= ''  %>>
-                <%= link_to  c.name + '<i class="icon-chevron-right"></i>' , "##{c.id}" %>
+                <li>
+                <%= link_to  c.name + '<i class="icon-chevron-right"></i>', url(:section, :index, @section.key) + "##{c.id.to_s}" %>
                 </li>
               <% end %>
               </ul>
@@ -61,11 +61,9 @@
         </div>
       </div><!--/row-->
 
-      <!--
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; Company <%= Time.now.year %></p>
       </footer>
-      -->
 
     </div> <!-- /container -->
 

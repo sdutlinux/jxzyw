@@ -12,14 +12,14 @@
         <th>简介</th>
       </tr>
     </thead>
-    <% cate.teachers.each do |course| %>
+    <% cate.teachers.each do |t| %>
       <tbody>
         <tr>
-          <td> <%= link_to course.name, course.link, :target => "_blank" %> </td>
-          <td> <%= course.college %> </td>
-          <td> <%= course.category.name%> </td>
-          <td> <%= course.charge_people %> </td>
-          <td> <%= course.desc%> </td>
+          <td> <%= link_to t.name, url(:item, :show, @section.key, t.id ), :target => "_blank" %> </td>
+          <td> <%= t.college %> </td>
+          <td> <%= t.category.name%> </td>
+          <td> <%= t.charge_people %> </td>
+          <td> <%= t.desc%> </td>
         </tr>
       <% end %>
     </tbody>

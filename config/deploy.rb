@@ -4,7 +4,7 @@ require 'rvm/capistrano'
 set :rvm_type, :system 
 set :rvm_ruby_string, 'ruby-1.9.3-p327@jxzyw'
 
-server "rails@210.44.176.208", :app, :web, :db, :primary => true
+server "rails@210.44.176.241", :app, :web, :db, :primary => true
 set :port, 80
 
 set :application, "jxzyw"
@@ -13,7 +13,7 @@ set :scm, :git
 set :branch, "master"
 set :use_sudo, false
 set :keep_releases, 3
-#set :bundle_without, [:development,:test]
+set :bundle_without, [:development,:test]
 
 set :deploy_to, "/home/rails/#{application}"
 

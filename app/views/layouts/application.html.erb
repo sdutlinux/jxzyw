@@ -52,7 +52,8 @@
               <ul class="nav nav-list bs-docs-sidenav affix">
               <% @section.categories.each do |c| %>
                 <li>
-                <%= link_to  c.name + '<i class="icon-chevron-right"></i>', url(:section, :index, @section.key) + "##{c.id.to_s}" %>
+                  <% str = c.name + '<i class="icon-chevron-right"></i>' %>
+                <%= link_to str.html_safe, url(:section, :index, @section.key) + "##{c.id.to_s}" %>
                 </li>
               <% end %>
               </ul>
@@ -69,7 +70,8 @@
     </div> <!-- /container -->
 
     <%= javascript_include_tag  'jquery-1.8.2.min' %>
-    <%= javascript_include_tag  'application' %>
+
+     <!-- <%= javascript_include_tag  'application' %> -->
     <%= javascript_include_tag  'modernizr.min' %>
     <%= javascript_include_tag  'bootstrap-collapse' %>
 

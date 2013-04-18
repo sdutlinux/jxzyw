@@ -870,7 +870,7 @@ form.bs-docs-example {
     margin-top: 20px;
   }
   .bs-docs-sidenav.affix {
-    top: 0;
+    top: 70px;
   }
 }
 

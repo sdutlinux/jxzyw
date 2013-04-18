@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'http://ruby.sdutlinux.org'
 # source :rubygems
 
 # Server requirements
@@ -23,7 +23,7 @@ gem 'rspec'
 gem 'rack-test', :require => "rack/test"
 
 # Padrino Stable Gem
-gem 'padrino', '0.10.7'
+gem 'padrino', '0.11.1'
 
 group :development do 
   gem 'capistrano'

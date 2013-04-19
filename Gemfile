@@ -2,7 +2,7 @@ source 'http://ruby.sdutlinux.org'
 # source :rubygems
 
 # Server requirements
-gem 'thin' # or mongrel
+# gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
 
 # Project requirements
@@ -23,7 +23,7 @@ gem 'rspec'
 gem 'rack-test', :require => "rack/test"
 
 # Padrino Stable Gem
-gem 'padrino', '0.11.1'
+gem 'padrino', '0.10.7'
 
 group :development do 
   gem 'capistrano'
